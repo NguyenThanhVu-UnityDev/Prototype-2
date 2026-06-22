@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
         GameEvents.OnHitAnimal -= OnAnimalMissOrHit;
     }
 
+    private void Start()
+    {
+        UIEvents.RaiseOnPlayerLivesChange(lives);
+        UIEvents.RaiseOnPlayerScoreChange(score);
+    }
+
     public void DecreaseLives(int increment = 1)
     {
         lives -= increment;
@@ -42,13 +48,13 @@ public class GameManager : MonoBehaviour
             lives = 0;
             UIEvents.RaiseOnPlayerDead();
         }
-        UIEvents.RaiseOnPlayerLivesChange();
+        UIEvents.RaiseOnPlayerLivesChange(lives);
     }
 
     public void AddScore(int points)
     {
         score += points;
-        UIEvents.RaiseOnPlayerScoreChange();
+        UIEvents.RaiseOnPlayerScoreChange(score);
     }
 
     public void OnAnimalFed()

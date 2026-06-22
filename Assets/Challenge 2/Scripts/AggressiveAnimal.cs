@@ -32,6 +32,11 @@ public class AggressiveAnimal : MonoBehaviour
         }
     }
 
+    public void OnOutOfBound()
+    {
+        GameEvents.RainOnMissAnimal();
+    }
+
     private void UpdateHungerBar()
     {
         if (hungerBar != null)

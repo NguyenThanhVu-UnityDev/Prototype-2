@@ -1,29 +1,34 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    [SerializeField] float topBound = 30f;
-    [SerializeField] float bottomBound = -10f;
-    [SerializeField] float sideBound = 30f;
+    [SerializeField] float topBound = 30;
+    [SerializeField] float lowerBound = -10;
+    [SerializeField] float rightBound = 30;
+    [SerializeField] float leftBound = -30;
+
+    [SerializeField] UnityEvent onDestroy = new();
+
+    // Update is called once per frame
     void Update()
     {
-        // Currently, only food can exceed the top bound
-        if (transform.position.z > topBound)
+        if (transform.position.z > topBound ||
+            transform.position.z < lowerBound ||
+            transform.position.x > rightBound ||
+            transform.position.x < leftBound)
         {
-            Destroy(gameObject);
-        }
+            onDestroy.Invoke();
+            gameObject.SetActive(false);
 
-        // Currently, only the animals can exceed the bottom bound
-        if (transform.position.z < bottomBound)
-        {
-            GameEvents.RainOnMissAnimal();
-            Destroy(gameObject);
         }
+        //else if (transform.position.z < lowerBound)
+        //{
+        //    Debug.Log("Game Over!");
+        //    Destroy(gameObject);
+        //}
 
-        if (transform.position.x < -sideBound || transform.position.x > sideBound)
-        {
-            GameEvents.RainOnMissAnimal();
-            Destroy(gameObject);
-        }
     }
 }

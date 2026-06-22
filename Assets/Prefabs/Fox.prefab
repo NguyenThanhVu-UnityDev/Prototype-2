@@ -275,11 +275,11 @@ GameObject:
   - component: {fileID: 1909149635198638842}
   - component: {fileID: 3419133715660286029}
   - component: {fileID: 3324919182791057493}
-  - component: {fileID: 6845499453781064616}
   - component: {fileID: -4626975362078812706}
   - component: {fileID: -5471640425484354195}
   - component: {fileID: 5178693619867826806}
-  - component: {fileID: 89206588844513749}
+  - component: {fileID: -2780782833898732539}
+  - component: {fileID: 6847294761459949282}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Animal
@@ -350,21 +350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
---- !u!114 &6845499453781064616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4588799063697061281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0123fca0e894a43aecdbdc1b59c1fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topBound: 30
-  bottomBound: -10
-  sideBound: 30
 --- !u!65 &-4626975362078812706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -427,7 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredFoodCount: 3
   hungerBar: {fileID: 618741912393267318}
---- !u!114 &89206588844513749
+--- !u!114 &-2780782833898732539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,7 +421,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 4588799063697061281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83da6dca0e82f946bd96c9a686823bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBound: 30
+  lowerBound: -10
+  rightBound: 30
+  leftBound: -30
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5178693619867826806}
+        m_TargetAssemblyTypeName: AggressiveAnimal, Assembly-CSharp
+        m_MethodName: OnOutOfBound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6847294761459949282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588799063697061281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4980345268868179157

@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    private void Start()
-    {
-        OnPlayerLivesChange();
-        OnPlayerScoreChange();
-    }
-
     private void OnEnable()
     {
         UIEvents.OnPlayerLivesChange += OnPlayerLivesChange;
@@ -22,19 +16,19 @@ public class UIManager : MonoBehaviour
         UIEvents.OnPlayerDead -= OnPlayerDead;
     }
 
-    public void OnPlayerLivesChange()
+    public void OnPlayerLivesChange(int newLive)
     {
         if (GameManager.Instance != null)
         {
-            Debug.Log("Lives = " + GameManager.Instance.Lives);
+            Debug.Log("Lives = " + newLive);
         }
     }
 
-    public void OnPlayerScoreChange()
+    public void OnPlayerScoreChange(int newScore)
     {
         if (GameManager.Instance != null)
         {
-            Debug.Log("Score = " + GameManager.Instance.Score);
+            Debug.Log("Score = " + newScore);
         }
     }
 

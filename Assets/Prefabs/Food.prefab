@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1381071615325504988}
   - component: {fileID: 4765011348318349138}
   - component: {fileID: 8700714653547441103}
-  - component: {fileID: 3064856245280313334}
   - component: {fileID: 5045381996944085456}
   - component: {fileID: 5631065929795556820}
+  - component: {fileID: 2956887331918247629}
+  - component: {fileID: 2913579235435593270}
   m_Layer: 0
   m_Name: Food
   m_TagString: Food
@@ -103,20 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
---- !u!114 &3064856245280313334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418019523054424369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0123fca0e894a43aecdbdc1b59c1fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topBound: 30
-  lowerBound: -10
 --- !u!54 &5045381996944085456
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,3 +152,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.50622404, y: 0.47573793, z: 0.4844519}
   m_Center: {x: 0, y: 0.009565257, z: 0.021385126}
+--- !u!114 &2956887331918247629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418019523054424369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBound: 30
+  lowerBound: -10
+  rightBound: 30
+  leftBound: -30
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2913579235435593270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418019523054424369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2163689e693beae4bbc7cd06a10f9e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

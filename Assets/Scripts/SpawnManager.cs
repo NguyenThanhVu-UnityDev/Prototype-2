@@ -32,6 +32,7 @@ public class SpawnManager : MonoBehaviour
     private void SpawnUpDown()
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
+        Debug.Log($"Index: {animalIndex} Length: {animalPrefabs.Length}");
         Vector3 spawnPos = new(Random.Range(-spawnPositionXRange, spawnPositionXRange), 0, spawnPositionZ);
         var newAnimal = Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
         newAnimal.transform.rotation = Quaternion.LookRotation(Vector3.back);

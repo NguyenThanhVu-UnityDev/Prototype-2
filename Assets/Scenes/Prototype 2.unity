@@ -771,6 +771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1700691364}
   - component: {fileID: 1700691363}
+  - component: {fileID: 1700691365}
   m_Layer: 0
   m_Name: SpawnnManager
   m_TagString: Untagged
@@ -817,6 +818,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1700691365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700691362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c0e1f24e2ce4a5b9bf1f3a7499cd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 5418019523054424369, guid: b847d5e095991474b943affa63fc32a0, type: 3}
+  amountToPool: 20
 --- !u!1001 &1767665339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,99 +895,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 814f4326a50812947b2469896d89a215, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1767665341}
+      addedObject: {fileID: 1767665344}
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 814f4326a50812947b2469896d89a215, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1767665344}
+      addedObject: {fileID: 1767665348}
   m_SourcePrefab: {fileID: 100100000, guid: 814f4326a50812947b2469896d89a215, type: 3}
 --- !u!1 &1767665340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100046, guid: 814f4326a50812947b2469896d89a215, type: 3}
   m_PrefabInstance: {fileID: 1767665339}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1767665341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767665340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f18f0e594dd3ddc4b97bb34c453d84e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: dd861817-90f8-4d58-a740-15ad7e7a39ac
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: ff83255b-f807-4998-ba53-09007a6eefd5
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: up
-      m_Id: e055017c-71ae-4602-8dc6-74d98bf28f9d
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 93042ed2-169e-468d-8a81-beced0b68a84
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 76d580bc-018b-4e56-a94b-222b746bb2ea
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: right
-      m_Id: a9a63fdd-61a5-4886-b226-91994641ee19
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    m_Flags: 0
-  fireAction:
-    m_Name: Fire
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d0f3a38-b792-4d9e-8476-83ac60a65983
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 77830cf7-f001-4181-84c3-51761d127919
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Fire
-      m_Flags: 0
-    m_Flags: 0
-  speed: 10
-  xRange: 10
-  maxZ: 7
-  minZ: -1
-  projectilePrefab: {fileID: 5418019523054424369, guid: b847d5e095991474b943affa63fc32a0, type: 3}
 --- !u!65 &1767665344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -993,6 +926,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.4601796, y: 3.0045578, z: 1}
   m_Center: {x: 0.015178323, y: 1.5184757, z: 0}
+--- !u!114 &1767665348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767665340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e917c52987daa41af6a0305d9813c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
