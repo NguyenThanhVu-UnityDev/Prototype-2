@@ -16,19 +16,18 @@ public class AggressiveAnimal : MonoBehaviour
     public void OnCollidedWithPlayer(GameObject player)
     {
         GameEvents.RaiseOnHitAnimal();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void OnCollidedWithFood(GameObject food)
     {
         GameEvents.RaiseOnAnimalFed();
-        Destroy(food.gameObject);
-        //Destroy(gameObject);
+        food.gameObject.SetActive(false);
         currentFoodReceived++;
         UpdateHungerBar();
         if (currentFoodReceived >=  requiredFoodCount)
         {
-            Destroy(gameObject);
+             gameObject.SetActive(false);
         }
     }
 

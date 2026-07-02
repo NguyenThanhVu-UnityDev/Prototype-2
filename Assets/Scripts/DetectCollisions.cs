@@ -16,12 +16,10 @@ public class DetectCollisions : MonoBehaviour
         if (other.GetComponent<PlayerController>() != null)
         {
             mainAni.OnCollidedWithPlayer(other.gameObject);
-            gameObject.SetActive(false);
         }
         else if (other.GetComponent<Food>() != null)
         {
             mainAni.OnCollidedWithFood(other.gameObject);
-            gameObject.SetActive(false);
         }
     }
 
